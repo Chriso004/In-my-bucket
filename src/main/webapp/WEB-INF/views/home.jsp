@@ -10,6 +10,6 @@
 	Hello world!  
 </h1>
 
-<P>  한글 깨짐 테스트 </P>
+<P>  merge 테스트 </P>
 </body>
 </html>
