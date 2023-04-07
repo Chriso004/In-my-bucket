@@ -12,10 +12,4 @@ public class HomeController {
 		return "home";
 	}
 	
-	public ModelAndView bucketPeed() {
-		ModelAndView mav = new ModelAndView();
-		mav.setViewName("/views/home");
-		return mav;
-	}
-	
 }
