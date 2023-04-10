@@ -1,4 +1,6 @@
 @charset "UTF-8";
+/* 폰트 */
+@import url('https://fonts.googleapis.com/css2?family=Kristi&display=swap');
 
 /* 초기화 */
 body, ul, li{
@@ -36,6 +38,7 @@ header div,ul,li{
 header li{
 	font-size: 15px;
 }
+/* 메인메뉴 : 로고(홈), 피드, 자유게시판 */
 .main-menu {
 	display: flex;
 	align-items: center;
@@ -43,6 +46,7 @@ header li{
 .main-menu ul,li{
 	margin-left:30px;
 }
+/* 검색창 */
 .search{
 	left: 560px;
 	top: 32px;
@@ -54,6 +58,30 @@ header li{
 	padding: 0 20px;
 	border-color: #gray;
 }
-.user-menu{
+/* 버튼 */
+.btn{
+	/* display: flex; */
+	/* flex-direction: row; */
+	/* justify-content: center; */
+	/* align-items: center; */
+	padding: 12px 30px;
 	
+	color: #fff;
+	background: #001AFF;
+	border-radius: 20px;
+	border: none;
+}
+/* 유저메뉴 : 채팅, 알림, 환경설정 */
+
+/* jsp 공통 */
+.container {
+	width: 90%;
+	margin: 0 auto;
+}
+
+/* 푸터 */
+footer {
+	text-align: center;
+	font-size: 15px;
+	color: #ddd;
 }
