@@ -6,10 +6,27 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<link rel="stylesheet" href="/inmybucket/inc/style.css" type="text/css"/>
+
+
 </head>
 <body>
 <header>
-	<div class="header-box">
-		헤더
+	<div class="logo">
+		<a href="/inmybucket/"><img src="img/logo.png"></a>
+	</div>
+	<div class="main-menu">
+		<ul>
+			<li><a href="">피드</a></li>
+			<li><a href="">자유게시판</a></li>
+		</ul>
+		<ul>
+			<c:if test="${logStatus!='Y' }">
+				<li><a href="/inmybucket/loginForm">로그인</a></li>
+			</c:if>
+			<c:if test="${logStatus=='Y' }">
+				<li>${logName }님! 오늘은 어떤 버킷리스트를 응원해볼까요?,<a href="/inmybucket/logout">로그아웃</a></li>
+			</c:if>
+		</ul>
 	</div>
 </header>
