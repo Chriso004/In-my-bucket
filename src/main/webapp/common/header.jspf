@@ -12,21 +12,27 @@
 </head>
 <body>
 <header>
-	<div class="logo">
-		<a href="/inmybucket/"><img src="img/logo.png"></a>
-	</div>
-	<div class="main-menu">
-		<ul>
-			<li><a href="">피드</a></li>
-			<li><a href="">자유게시판</a></li>
-		</ul>
-		<ul>
-			<c:if test="${logStatus!='Y' }">
-				<li><a href="/inmybucket/loginForm">로그인</a></li>
-			</c:if>
-			<c:if test="${logStatus=='Y' }">
-				<li>${logName }님! 오늘은 어떤 버킷리스트를 응원해볼까요?,<a href="/inmybucket/logout">로그아웃</a></li>
-			</c:if>
-		</ul>
+	<div class="header-box">
+		<div class="main-menu">
+			<a href="/inmybucket/"><img src="img/logo.png" style="height:60"></a>
+			<ul>
+				<li><a href="">피드</a></li>
+				<li><a href="">자유게시판</a></li>
+			</ul>
+		</div>
+		<div class="search">
+			<img src="">
+			<input type="text" placeholder="사용자, 버킷리스트를 검색하세요.">
+		</div>
+		<div class="user-menu">
+			<ul>
+				<c:if test="${logStatus!='Y' }">
+					<li><a href="/inmybucket/loginForm">로그인</a></li>
+				</c:if>
+				<c:if test="${logStatus=='Y' }">
+					<li>${logName }님! 오늘은 어떤 버킷리스트를 응원해볼까요?,<a href="/inmybucket/logout">로그아웃</a></li>
+				</c:if>
+			</ul>
+		</div>
 	</div>
 </header>
