@@ -1,0 +1,30 @@
+@import url("./common.css");
+
+.myPage {
+    width: 100%;
+    flex-grow: 0;
+    background-color: #fff;
+}
+
+.header {
+    width: 100%;
+    height: 10%;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+}
+
+.sidebar {
+    width: 14%;
+    height: 100%;
+    padding: 77px 0 215px;
+    background-color: #d9d9d9;
+    position: absolute;
+}
+
+.profile-container {
+    width: 100%;
+    height: 200px;
+    background-color: black;
+}
