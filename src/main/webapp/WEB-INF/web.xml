@@ -30,15 +30,6 @@
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 	
-	<!-- include -->
-	<jsp-config>
-		<jsp-property-group>
-			<url-pattern>/WEB-INF/views/*</url-pattern>
-			<include-prelude>/common/header.jspf</include-prelude>
-			<include-coda>/common/footer.jspf</include-coda>
-		</jsp-property-group>
-	</jsp-config>
-	
 	<filter>
 		<filter-name>encodingFilter</filter-name>
 		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
