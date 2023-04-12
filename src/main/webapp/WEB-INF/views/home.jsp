@@ -9,7 +9,7 @@
 	margin: 40px auto;
 	text-align: center;
 	
-	background-image: url(""); /* url("/img/모눈.jpeg") 톰캣 경로 문제로 적용이 안되네요.. 추후에 수정하겠습니다. */
+	background: url("${pageContext.request.contextPath}/img/grid.jpeg");
 	border: 1px solid #000;
 	border-radius: 30px;
 }
@@ -34,9 +34,7 @@
 	/* identical to box height */
 	
 	text-align: center;
-	
 	color: #001AFF;
-
 	transform: rotate(-17.3deg);
 }
 .sub-banner{
@@ -50,7 +48,9 @@
 	justify-content: space-between;
 	align-items: center;
 	
-	background-image: url(""); /* 추후 배경 이미지 넣을 예정 */
+	color: #fff;
+	background: url("${pageContext.request.contextPath}/img/bluedd.jpeg");
+	background-size: cover;
 	border: 1px solid #000;
 	border-radius: 30px;
 }
@@ -70,7 +70,7 @@
 		<p>
 			나의 버킷리스트를 등록하고 다른 사용자들과 함께 이뤄보세요.
 		</p>
-		<button class="btn" onclick="location.href=''">지금 바로 둘러보기</button>
+		<button class="btn" onclick="location.href='/inmybucket/feed/feedList'">지금 바로 둘러보기</button>
 	</div>
 	<div class="sub-banner">
 		<!-- b태그안에 통계자료 넣을 예정 -->
