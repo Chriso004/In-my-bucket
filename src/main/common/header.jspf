@@ -37,7 +37,7 @@
 <header>
 	<div class="header-box">
 		<div class="main-menu">
-			<a href="/inmybucket/"><img src="${pageContext.request.contextPath}/img/logo.png" style="height:60px"></a>
+			<a href="/inmybucket/"><img src="${ pageContext.request.contextPath }/img/logo.png" style="height:60px"></a>
 			<ul>
 				<li><a href="/inmybucket/feed/feedList">피드</a></li>
 				<li><a href="">자유게시판</a></li>
@@ -48,10 +48,10 @@
 		</div>
 		<div class="user-menu">
 			<ul>
-				<c:if test="${logStatus!='Y' }">
+				<c:if test="${ logStatus!='Y' }">
 					<button class="btn" onclick="location.href=''">로그인</button>
 				</c:if>
-				<c:if test="${logStatus=='Y' }">
+				<c:if test="${ logStatus=='Y' }">
 					<li><i class="icon icon-chat" onclick="location.href=''"></i></li>
 					<li><i class="icon icon-notice" onclick="location.href=''"></i></li>
 					<li><i class="icon icon-setting" onclick="location.href=''"></i></li>
