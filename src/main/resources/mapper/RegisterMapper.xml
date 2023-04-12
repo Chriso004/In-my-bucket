@@ -7,7 +7,18 @@
 	  	select count(userid) cnt from register where userid=#{param1}
 	  </select>
 	  <insert id="registerInsert">
-	  	insert into inmybucketregister(userid, userpwd, username, email)
-	  	values(#{userid}, #{userpwd}, #{username}, #{email})
+	  	insert into inmybucketregister(userid, userpwd, username, email, usernick)
+	  	values(#{userid}, #{userpwd}, #{username}, #{email}, #{usernick})
 	  </insert>
+	  <select id="loginOk" resultType="com.group7.inmybucket.vo.RegisterVO">
+	  	select userid, username, usernick, permission from inmybucketregister where userid=#{param1} and userpwd=#{param2}
+	  </select>
+	  <select id="registerEdit" resultType="com.group7.inmybucket.vo.RegisterVO">
+	  	select userid, username, email, usernick from inmybucketregister
+	  	where userid=#{param1}
+	  </select>
+	  <update id="registerEditOk">
+	  	update inmybucketregister set usernick=#{usernick}
+	  	where userid=#{userid} and userpwd=#{userpwd}
+	  </update>
   </mapper>

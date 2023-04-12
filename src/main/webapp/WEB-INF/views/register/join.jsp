@@ -18,7 +18,7 @@
 	#joinForm li:last-child{
 		width:100%;
 	}
-	#addr{width:80%;}
+	
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 <script>
@@ -36,10 +36,7 @@ $(function(){
 	$("#userid").keyup(function(){
 		$("#idStatus").val("N");
 	});
-	//우편번호 검색
-	$("#zipSearch").on('click', function(){
-		window.open("zipcodeSearch","zipcode","width=500,height=600");
-	});
+	
 	
 	//유호성 검사
 	$("#joinForm").submit(function(){
@@ -77,6 +74,11 @@ $(function(){
 				alert("이름은 2~10글자까지 한글만 가능합니다.");
 				return false;
 			}
+			//닉네임검사
+			if($("#usernick").val()==""){
+				alert("닉네임을 입력하세요.");
+				return false;
+			}
 			
 			
 			//이메일
@@ -112,7 +114,8 @@ $(function(){
 		<li><input type="password" name="userpwd2" id="userpwd2" /></li>
 		<li>이름</li>
 		<li><input type="text" name="username" id="username" minlength="2" maxlength="10" /></li>
-		
+		<li>닉네임</li>
+		<li><input type="text" name="usernick" id="usernick" minlength="2" maxlength="8"/></li>
 		<li>이메일</li>
 		<li><input type="text" name="email" id="email" /></li>
 	

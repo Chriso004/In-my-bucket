@@ -6,13 +6,37 @@ public class RegisterVO {
 	private String username;
 	private String email;
 	private String registerdate;
+	private String usernick;
+	private String permission;
 	
 	
+	
+	
+
+	
+
 	@Override
 	public String toString() {
 		return "RegisterVO [userid=" + userid + ", userpwd=" + userpwd + ", username=" + username + ", email=" + email
-				+ ", registerdate=" + registerdate + "]";
+				+ ", registerdate=" + registerdate + ", usernick=" + usernick + ", permission=" + permission + "]";
 	}
+
+	public String getPermission() {
+		return permission;
+	}
+
+	public void setPermission(String permission) {
+		this.permission = permission;
+	}
+
+	public String getUsernick() {
+		return usernick;
+	}
+
+	public void setUsernick(String usernick) {
+		this.usernick = usernick;
+	}
+
 	public String getUserid() {
 		return userid;
 	}

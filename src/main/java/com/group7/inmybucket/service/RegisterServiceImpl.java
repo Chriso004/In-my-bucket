@@ -23,4 +23,22 @@ public class RegisterServiceImpl implements RegisterServiece {
 		
 		return dao.registerInsert(vo);
 	}
+
+	@Override
+	public RegisterVO loginOk(String userid, String userpwd, String usernick, String permission) {
+		
+		return dao.loginOk(userid, userpwd, usernick, permission);
+	}
+
+	@Override
+	public RegisterVO registerEdit(String userid) {
+		
+		return dao.registerEdit(userid);
+	}
+
+	@Override
+	public int registerEditOk(RegisterVO vo) {
+		
+		return dao.registerEditOk(vo);
+	}
 }
