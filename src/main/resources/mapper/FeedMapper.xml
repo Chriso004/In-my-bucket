@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.group7.inmybucket.dao.FeedDAO">
+  	<select id="totalRecord" resultType="int">
+		select count(b.no) from bucket_ref b join user u on b.uid=u.uid
+		<!-- 카테고리가 있을 경우 -->
+		<if test="category!=null"> 
+			where category=#{category} 
+		</if>
+		order by no desc <!-- 일단 최신순 -->
+	</select>
+  
+  </mapper>
