@@ -1,6 +1,6 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page session="false" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%-- <%@ page session="false" %> --%>
 <style>
 
 .main-banner{
@@ -58,7 +58,7 @@
 	padding: 0 70px;
 }
 .sub-banner b{
-	font-size: 80px;
+	font-size: 90px;
 }
 </style>
 <div class="container">
@@ -74,8 +74,8 @@
 	</div>
 	<div class="sub-banner">
 		<!-- b태그안에 통계자료 넣을 예정 -->
-		<span>지난 한달간 등록된 버킷리스트 수<b>100</b></span>
-		<span>목표 달성한 버킷리스트 수<b>100</b></span>
-		<span>목표 달성한 사용자 비율<b>80%</b></span>
+		<span>등록된 모든 버킷리스트 수<b>${allBucketCount }</b></span>
+		<span>목표 달성한 버킷리스트 수<b>${accomplishedBucketCount }</b></span>
+		<span>목표 달성을 경험한 사용자 비율<b>80%</b></span>
 	</div>
 </div>

@@ -3,13 +3,62 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
   <mapper namespace="com.group7.inmybucket.dao.FeedDAO">
-  	<select id="totalRecord" resultType="int">
-		select count(b.no) from bucket_ref b join user u on b.uid=u.uid
-		<!-- 카테고리가 있을 경우 -->
-		<if test="category!=null"> 
-			where category=#{category} 
-		</if>
-		order by no desc <!-- 일단 최신순 -->
-	</select>
-  
+  	<select id="allBucketCount" resultType="int">
+  		select count(no) from test
+  	</select>
+  	<select id="accomplishedBucketCount" resultType="int">
+  		select count(no) from test where progress=1
+  	</select>
+  	<select id="feedCount" resultType="int">
+  		select count(no) from test
+  		where visible=1 
+ 			<if test="listFilter!=null and listFilter!='all' and listFilter!=''">
+  				and isgroup=#{listFilter} 
+  			</if>
+  			<if test="category!=null and category!='all' and category!=''">
+  				and category = #{category} 
+  			</if> 
+  			<if test="searchWord!=''">
+  				and title like '%${searchWord}%'
+  			</if>
+  	</select>
+  	<select id="listAll" resultType="com.group7.inmybucket.dto.FeedDTO">
+  		select * from 
+  			(select userid, no, isgroup, visible, title, thumbnail, progress, category, like_count, to_char(bucket_writedate, 'YY/MM/DD') writedate 
+  			from test 
+  			where visible=1 
+  			<if test="category!=null and category!='all' and category!=''">
+  				and category=#{category} 
+  			</if>
+  			<if test="listFilter!=null and listFilter!='all' and listFilter!=''">
+  				and isgroup=#{listFilter} 
+  			</if>
+  			<if test="searchWord!=''">
+  				and title like '%${searchWord}%'
+  			</if>
+  			<choose>
+  				<when test="listSort!=null and listSort!='recent' and listSort!=''">
+  					order by like_count desc, no desc
+  				</when>
+  				<otherwise>
+  					order by no desc
+  				</otherwise>
+  			</choose>
+  			) 
+  		<![CDATA[
+  		where rownum <= 12
+  		]]>
+  	</select>
+  	<select id="userList" resultType="com.group7.inmybucket.dto.FeedDTO">
+  		select u."userid", u."usernick", p.user_image_path  from USERTABLE u join PROFILE p on u."userid"=p.userid 
+  		<if test="searchWord!=''">
+  		where u."usernick" like '%${searchWord}%'
+  		</if>
+  	</select>
+  	<select id="userCount" resultType="int">
+  		select count(*) from USERTABLE 
+  		<if test="searchWord!=''">
+  		where "usernick" like '%${searchWord}%'
+  		</if>
+  	</select>
   </mapper>

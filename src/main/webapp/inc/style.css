@@ -1,0 +1,42 @@
+@charset "UTF-8";
+/* 폰트 */
+@import url('https://fonts.googleapis.com/css2?family=Kristi&display=swap');
+
+/* 초기화 */
+body, ul, li{
+	padding: 0; 
+	margin: 0; 
+	list-style-type: none;
+}
+
+a:link, a:visited, a:hover{
+	text-decoration: none;
+	color: black;
+}
+
+/* 파랑 로그인 버튼 */
+.btn{
+	padding: 12px 30px;
+	
+	color: #fff;
+	background: #001AFF;
+	border-radius: 20px;
+	border: none;
+}
+/* jsp 페이지 공통 */
+.container {
+	width: 1300px;
+	margin: 50px auto;
+}
+/* 아이콘기본정렬 */
+.icon {
+	    display: inline-block;
+	    vertical-align: middle;
+	}
+
+/* 푸터 */
+footer {
+	text-align: center;
+	font-size: 15px;
+	color: #ddd;
+}
