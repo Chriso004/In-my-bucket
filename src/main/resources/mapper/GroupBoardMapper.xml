@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.group7.inmybucket.dao.GroupBoardDAO">
+	<select id="getBucket"
+		resultType="com.group7.inmybucket.dto.BucketDTO">
+		SELECT * FROM BUCKET_REF WHERE bucket_no = #{ param1 }
+	</select>
+
+	<select id="getGroupBoard"
+		resultType="com.group7.inmybucket.dto.GroupBoardDTO">
+		SELECT u.usernick, g.group_board_no, g.group_no,
+		g.group_title, g.group_content, g.group_writedate, g.isnotice
+		FROM
+		USERTABLE u
+		INNER JOIN GROUP_BUCKET_BOARD g
+		ON (u.userid = g.userid)
+		WHERE isnotice = 0 AND group_no = #{ param1 }
+	</select>
+
+	<select id="getGroupNotice"
+		resultType="com.group7.inmybucket.dto.GroupBoardDTO">
+		SELECT group_board_no, group_title, group_no FROM GROUP_BUCKET_BOARD
+		WHERE isnotice = 1 AND group_no = #{ param1 }
+	</select>
+
+	<select id="getBoardByNo"
+		resultType="com.group7.inmybucket.dto.GroupBoardDTO">
+		SELECT * FROM GROUP_BUCKET_BOARD WHERE group_board_no = #{
+		param1 }
+	</select>
+
+	<select id="getTotalNoticeCnt" resultType="int">
+		SELECT COUNT(*) FROM
+		GROUP_BUCKET_BOARD WHERE isnotice = 1 AND group_no = #{ param1 }
+	</select>
+
+	<select id="getTotalBoardCnt" resultType="int">
+		SELECT COUNT(*) FROM
+		GROUP_BUCKET_BOARD WHERE isnotice = 0 AND group_no = #{ param1 }
+	</select>
+
+	<insert id="postGroupBoard"
+		parameterType="com.group7.inmybucket.dto.GroupBoardDTO">
+		INSERT INTO GROUP_BUCKET_BOARD(group_board_no, group_no,
+		userid, group_title, group_content, isnotice)
+		VALUES
+		(GROUP_BOARD_SEQ.nextval, #{ group_no }, #{ userid }, #{ group_title
+		}, #{ group_content }, #{ isnotice })
+	</insert>
+
+	<update id="updateGroupBoard"
+		parameterType="com.group7.inmybucket.dto.GroupBoardDTO">
+		UPDATE GROUP_BUCKET_BOARD SET
+		group_title = #{
+		group_title },
+		group_content = #{ group_content },
+		group_writedate = sysdate
+		WHERE group_board_no =
+		#{ group_board_no }
+	</update>
+
+	<delete id="deleteGroupBoard">
+		DELETE FROM GROUP_BUCKET_BOARD
+		WHERE group_board_no =
+		#{ param1 }
+	</delete>
+
+	<select id="getNickname" resultType="String">
+		SELECT usernick FROM
+		USERTABLE WHERE userid = #{ param1 }
+	</select>
+
+	<select id="isAdmin" resultType="boolean">
+		SELECT COUNT(*) FROM BUCKET_REF
+		WHERE userid = #{ param1 } AND bucket_no = #{ param2 }
+	</select>
+	
+	<select id="isAuthor" resultType="boolean">
+		SELECT COUNT(*) FROM GROUP_BUCKET_BOARD
+		WHERE userid = #{ param1 } AND group_board_no = #{ param2 }
+	</select>
+</mapper>

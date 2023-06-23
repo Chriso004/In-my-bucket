@@ -1,0 +1,190 @@
+@charset "UTF-8";
+
+@import url("../common/common.css");
+
+/** */
+.info {
+	width: 570px;
+}
+
+/** 상단부 스타일 */
+.info-container {
+	display: flex;
+}
+
+.profile-container, .summary-container {
+	width: 570px;
+	height: 400px;
+	background-color: #d9d9d9;
+	object-fit: contain;
+	margin: 0 auto;
+	border: solid 1px #000;
+	background-color: #fff;
+	border-radius: 30px;
+}
+
+.profile-header {
+	width: 100%;
+	height: 50px;
+	display: flex;
+	justify-content: right;
+	align-items: center;
+}
+
+/** 프로필 편집 */
+.edit-profile, .edit-submit {
+	width: 114px;
+	height: 30px;
+	padding: 6px 20px;
+	border-radius: 20px;
+	border: solid 1px #000;
+	background-color: #fff;
+	margin-right: 10px;
+}
+
+.edit-submit {
+	display: none;
+	background-color: #001AFF;
+	color: #fff;
+}
+
+.profile-container input {
+	border: 0px;
+	padding: 0px;
+	margin: 0px;
+}
+
+/** 파일 업로드 폼 */
+
+
+/** 프로필 이미지 스타일 */
+.image-container {
+	width: 100%;
+	height: 220px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.image-wrap {
+	width: 180px;
+	height: 180px;
+}
+
+.image-wrap img {
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+}
+
+/** 환영 메세지 스타일 */
+.message-container {
+	width: 100%;
+	height: 70px;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.message-wrap {
+	width: 70%;
+}
+
+.nickname {
+	font-weight: bold;
+	font-size: 20px;
+	width: 150px;
+}
+
+/** 한 줄 메세지 스타일 */
+.status-container {
+	width: 85%;
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 10px;
+	background-color: rgba(255, 255, 255, 0.61);
+	margin: 0 auto;
+}
+
+.status-message-container {
+	width: 100%;
+	text-align: center;
+}
+
+.status-message {
+	 font-family: Inter;
+	 color: #868686;
+}
+
+.status-container button {
+	border-radius: 20px;
+	background-color: #ffc69d;
+	border: 0px;
+	padding: 5px;
+}
+
+/** 통계 스타일 */
+.summary-wrap {
+	width: 100%;
+	height: 70%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.bucket-summary {
+	width: 133px;
+	height: 129px;
+	flex-grow: 0;
+	object-fit: contain;
+	float: left;
+	border-radius: 50%;
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.archieve-bucket {
+	background-color: #a6afff;
+}
+
+.participate-bucket {
+	background-color: #794aff;
+}
+
+.total-bucket {
+	background-color: #4200ff;
+}
+
+.summary {
+	display: flex;
+	width: 102px;
+	height: 94px;
+	background-color: #fff;
+	border-radius: 50%;
+	justify-content: center;
+	align-items: center;
+}
+
+.summary b {
+	font-size: 20px;
+}
+
+.description-wrap {
+	display: flex;
+	text-align: center;
+}
+
+.description {
+	font-size: 13px;
+	margin: 0 auto;
+	font-weight: normal;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: normal;
+	letter-spacing: normal;
+}

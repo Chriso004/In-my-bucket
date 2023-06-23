@@ -1,0 +1,244 @@
+@charset "UTF-8";
+
+@import url("../common/groupCommon.css");
+
+/** 상단 메뉴 버튼 */
+.group-menu .board-btn {
+	background: #001AFF;
+}
+
+.group-menu .board-btn a {
+	color: white;
+}
+
+/* 버킷 본문 헤더(제목, 정보 등) */
+.board-header {
+	width: 100%;
+}
+
+.board-title {
+	text-align: center;
+}
+
+.title {
+	font-size: 64px;
+}
+
+.info-container {
+	width: 100%;
+	height: 70px;
+	display: flex;
+	align-items: flex-end;
+	border-bottom: 5px solid rgba(178, 178, 178, 0.6);
+	justify-content: space-between;
+	background-color: white;
+	margin-top: 50px;
+	border-radius: 25px;
+	border: 2px solid black;
+	align-items: center;
+}
+
+.info-left {
+	width: 30%;
+}
+
+.board-manage-container {
+	width: 20%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.board-manage-container a {
+	display: inline-block;
+}
+
+.nickname {
+	width: 140px;
+	height: 24px;
+	flex-grow: 0;
+	margin-left: 30px;
+	font-family: Inter;
+	font-size: 20px;
+	font-weight: normal;
+	font-stretch: normal;
+	font-style: normal;
+	letter-spacing: normal;
+	text-align: left;
+	color: #000;
+	font-family: Inter;
+	border-right: 3px solid #c6c6c6;
+	padding-right: 30px;
+}
+
+.writedate {
+	height: 24px;
+	flex-grow: 0;
+	margin-left: 30px;
+	font-family: Inter;
+	font-size: 20px;
+	font-weight: normal;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: normal;
+	letter-spacing: normal;
+	text-align: left;
+	color: #898989;
+}
+
+.board-body {
+	width: 100%;
+	height: 1000px;
+	background-color: white;
+	border-radius: 10px;
+	margin-top: 50px;
+	font-family: Inter;
+	font-size: 24px;
+	font-weight: normal;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: normal;
+	letter-spacing: normal;
+	text-align: left;
+	font-family: Inter;
+	border-radius: 25px;
+	border: 2px solid black;
+}
+
+.content-container {
+	width: 90%;
+	margin: 0 auto;
+}
+
+.content {
+	display: inline-block;
+	margin-top: 30px;
+}
+
+.board-comment-input {
+	width: 100%;
+	margin-top: 50px;
+	display: flex;
+	justify-content: center;
+}
+
+.board-comment-input form, .comment-container form {
+	width: 70%;
+}
+
+.comment-content {
+	width: 80%;
+	height: 50px;
+}
+
+.submit-btn {
+	width: 15%;
+	padding: 15px;
+}
+
+.comment-list-container {
+	width: 90%;
+	margin: 0 auto;
+	margin-top: 50px;
+	margin-bottom: 100px;
+}
+
+.comment-count-container {
+	margin-top: 30px;
+}
+
+.comment-header {
+	width: 90%;
+	background-color: #f1f1f1;
+	border-radius: 15px;
+	display: flex;
+}
+
+.comment-header .user-info {
+	flex: none;
+}
+
+.comment-header .comment-writedate {
+	margin-left: auto;
+}
+
+.comment-header div {
+	padding: 10px;
+}
+
+.comment-body {
+	width: 900px;
+	margin-left: 10px;
+	box-shadow: 0 2px 6px 0 rgba(67, 89, 113, 0.12);
+}
+
+.comment-manage-container {
+	width: 150px;
+	display: flex;
+	justify-content: space-around;
+}
+
+.comment-body .comment-content {
+	width: 70%;
+	margin: 0 auto;
+	padding: 10px;
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+
+.comment-body .submit-btn {
+	width: 8%;
+	padding: 15px;
+}
+
+.board-update, .board-delete {
+	width: 80px;
+	display: inline-block;
+	background-color: #a8a8ab;
+	border-radius: 20px;
+	padding: 10px;
+	text-align: center;
+}
+
+.board-delete {
+	background-color: #ff8787;
+}
+
+.comment-container {
+	width: 1000px;
+	display: flex;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-size: 18px;
+	background-color: white;
+	border-radius: 25px;
+	margin-left: 30px;
+}
+
+.comment-wrap {
+	margin-bottom: 20px;
+}
+
+.comment-update, .comment-delete {
+	background-color: #a8a8ab;
+	border-radius: 20px;
+	padding: 10px;
+	font-size: 12px;
+}
+
+.comment-delete {
+	background-color: #ff8787;
+}
+
+.form-container {
+	width: 900px;
+	margin-left: 10px;
+}
+
+.comment-span {
+	display: block;
+	width: 900px;
+	word-break: break-all;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}

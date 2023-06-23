@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.group7.inmybucket.dao.GroupCommentDAO">
+	<select id="getGroupComment"
+		resultType="com.group7.inmybucket.dto.GroupCommentDTO">
+		SELECT g.group_comment_no, g.group_no, u.usernick, u.userid, g.group_board_no,
+		g.group_comment_content, g.group_comment_writedate
+		FROM
+		GROUP_BOARD_COMMENT g
+		INNER JOIN USERTABLE u
+		ON (u.userid = g.userid)
+		WHERE group_board_no = #{ param1 }
+	</select>
+
+	<insert id="postGroupComment"
+		parameterType="com.group7.inmybucket.dto.GroupCommentDTO">
+		INSERT INTO GROUP_BOARD_COMMENT(group_comment_no,
+		group_no, userid, group_board_no, group_comment_content)
+		VALUES(group_comment_seq.nextval, #{ group_no }, #{ userid }, #{
+		group_board_no }, #{ group_comment_content })
+	</insert>
+
+	<update id="updateGroupComment"
+		parameterType="com.group7.inmybucket.dto.GroupCommentDTO">
+		UPDATE GROUP_BOARD_COMMENT SET
+		group_comment_content = #{
+		group_comment_content },
+		group_comment_writedate = sysdate
+		WHERE group_comment_no = #{ group_comment_no }
+	</update>
+
+	<delete id="deleteGroupComment">
+		DELETE FROM GROUP_BOARD_COMMENT
+		WHERE group_comment_no
+		= #{ param1 }
+	</delete>
+
+	<select id="getGroupCommentCnt" resultType="int">
+		SELECT COUNT(*) FROM
+		GROUP_BOARD_COMMENT
+		WHERE group_board_no = #{ param1 }
+	</select>
+	
+	<select id="isAuthor" resultType="boolean">
+		SELECT COUNT(*) FROM
+		GROUP_BOARD_COMMENT
+		WHERE userid = #{ param1 } AND group_board_no = #{ param2 }
+	</select>
+</mapper>

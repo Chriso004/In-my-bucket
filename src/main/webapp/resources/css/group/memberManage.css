@@ -1,0 +1,76 @@
+@charset "UTF-8";
+
+@import url("../common/groupCommon.css");
+
+.member-container, .queue-container {
+	width: 100%;
+}
+
+.member-list, .queue-list {
+	width: 100%;
+	border-radius: 25px;
+}
+
+.member-container .menu-title, .queue-list .menu-title {
+	width: 100%;
+	text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+	font-family: Inter;
+	font-size: 24px;
+	font-weight: normal;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: normal;
+	letter-spacing: normal;
+	text-align: left;
+	margin-top: 50px;
+}
+
+.member-list li, .queue-list li {
+	height: 90px;
+	border-bottom: 3px solid rgba(0, 0, 0, 0.6);
+	float: left;
+	display: flex;
+	align-items: center;
+	background-color: white;
+}
+
+.user-info {
+	width: 950px;
+	font-family: Inter;
+	font-size: 20px;
+	font-weight: normal;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: normal;
+	letter-spacing: normal;
+	text-align: left;
+	color: #000;
+}
+
+.member-list .registerdate {
+	width: 250px;
+}
+
+.member-list .kick-btn {
+	width: 100px;
+}
+
+.kick-btn a, .accept-btn a, .denied-btn a{
+	padding: 10px;
+	border-radius: 20px;
+	background-color: #a8a8ab;
+	font-size: 12px;
+}
+
+.accept-btn, .denied-btn {
+	width: 175px;
+	text-align: center;
+}
+
+.accept-btn a, .denied-btn a {
+	padding: 10px 20px 10px 20px;
+}
+
+.accept-btn a {
+	background-color: #725bff;
+}

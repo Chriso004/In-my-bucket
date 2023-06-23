@@ -1,0 +1,144 @@
+@charset "UTF-8";
+@import url("../common/groupCommon.css");
+
+/* 버튼 스타일 */
+.group-menu .info-btn {
+	background: #001AFF;
+}
+
+.group-menu .info-btn a {
+	color: white;
+}
+
+/* 버킷 본문 스타일 */
+.bucket-container {
+	width: 100%;
+}
+
+/* 버킷 본문 헤더(제목, 정보 등) */
+.board-header {
+	width: 100%;
+}
+
+.board-title {
+	text-align: center;
+}
+
+.title {
+	font-size: 64px;
+	background-color: white;
+}
+
+.info-container {
+	width: 100%;
+	height: 70px;
+	display: flex;
+	align-items: flex-end;
+	border-bottom: 5px solid rgba(178, 178, 178, 0.6);
+	background-color: white;
+	margin-top: 50px;
+	border-radius: 25px;
+	border: 2px solid black;
+}
+
+.info-left {
+	width: 30%;
+	margin-bottom: 25px;
+}
+
+.info-right {
+	width: 65%;
+	margin-bottom: 20px;
+}
+
+.nickname {
+	width: 140px;
+	height: 24px;
+	flex-grow: 0;
+	margin-left: 30px;
+	font-family: Inter;
+	font-size: 20px;
+	font-weight: normal;
+	font-stretch: normal;
+	font-style: normal;
+	letter-spacing: normal;
+	text-align: left;
+	color: #000;
+	font-family: Inter;
+	border-right: 3px solid #c6c6c6;
+	padding-right: 30px;
+}
+
+.writedate {
+	height: 24px;
+	flex-grow: 0;
+	margin-left: 30px;
+	font-family: Inter;
+	font-size: 20px;
+	font-weight: normal;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: normal;
+	letter-spacing: normal;
+	text-align: left;
+	color: #898989;
+}
+
+.info-list {
+	width: 50%;
+	display: flex;
+	float: right;
+}
+
+.info-list li {
+	width: 120px;
+	height: 35px;
+	flex-grow: 0;
+	border-radius: 20px;
+	text-align: center;
+	font-size: 16px;
+	font-weight: normal;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: 35px;
+	letter-spacing: normal;
+	text-align: center;
+	margin-left: auto;
+}
+
+.info-list li:nth-child(1) {
+	border: 1px solid black;
+}
+
+.info-list li:nth-child(2) {
+	background-color: #ff8787;
+}
+
+.info-list li:nth-child(3) {
+	background-color: #ff8934;
+}
+
+.board-body {
+	width: 100%;
+	height: 1000px;
+}
+
+.content-container {
+	width: 1260px;
+	height: 100%;
+	flex-grow: 0;
+	padding: 20px;
+	border-radius: 10px;
+	border: 2px solid black;
+	background-color: white;
+	margin-top: 50px;
+	font-family: Inter;
+	font-size: 24px;
+	font-weight: normal;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: normal;
+	letter-spacing: normal;
+	text-align: left;
+	font-family: Inter;
+}

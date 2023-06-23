@@ -1,0 +1,73 @@
+@charset "UTF-8";
+
+@import url("../common/groupCommon.css");
+
+/* 버튼 스타일 */
+.group-menu .notice-btn {
+	background: #001AFF;
+}
+
+.group-menu .notice-btn a {
+	color: white;
+}
+
+.notice-container {
+	width: 100%;
+	border-radius: 25px;
+	background-color: white;
+}
+
+.notice-container span {
+	display: inline-block;
+	margin-top: 30px;
+	margin-left: 50px;
+}
+
+.notice-list {
+	width: 100%;
+	background-color: rgba(255, 176, 176, 0.4);
+	border-radius: 25px;
+}
+
+.notice-list .type {
+	width: 300px;
+	border-bottom: 1px solid black;
+}
+
+.notice-list .title {
+	width: 1000px;
+	border-bottom: 1px solid black;
+}
+
+.notice-list li {
+	height: 80px;
+	float: left;
+	font-size: 24px;
+	font-weight: normal;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: normal;
+	letter-spacing: normal;
+	line-height: 50px;
+	padding-bottom: 20px;
+}
+
+.notice-header {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 15px;
+}
+
+.notice-write-container {
+	margin-right: 10px;
+}
+
+.notice-write {
+    padding: 10px;
+    background-color: #a8a8ab;
+    border-radius: 20px;
+}
+
+.comment-count {
+	background-color: white;
+}

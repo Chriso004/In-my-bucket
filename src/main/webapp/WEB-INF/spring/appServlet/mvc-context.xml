@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/logout"/>
+			<mvc:mapping path="/joinEdit"/>
+			<mvc:mapping path="/joinEditOk"/>
+			<mvc:mapping path="/register/removeForm"/>
+			<mvc:mapping path="/register/remove"/>
+			
+			
+			<bean class="com.group7.inmybucket.LoginInterceptor"></bean>
+			
+		</mvc:interceptor>
+	</mvc:interceptors>
+		
+		
+</beans>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.group7.inmybucket.dao.RegisterDAO">
+  	<select id="idCheckCount" resultType="int">
+	  	select count(userid) cnt from usertable where userid=#{param1}
+	  </select>
+	  <insert id="registerInsert">
+	  	insert into usertable(userid, userpwd, username, email, usernick, tel)
+	  	values(#{userid}, #{userpwd}, #{username}, #{email}, #{usernick}, #{tel})
+	  </insert>
+	  <select id="loginOk" resultType="com.group7.inmybucket.vo.RegisterVO">
+	  	select userid, userpwd, usernick, permission, email from usertable where userid=#{param1} and userpwd=#{param2}
+	  </select>
+	  <select id="registerEdit" resultType="com.group7.inmybucket.vo.RegisterVO">
+	  	select userid, username, email, usernick from usertable
+	  	where userid=#{param1}
+	  </select>
+	  <update id="registerEditOk">
+	  	update usertable set userpwd=#{userpwd}, usernick=#{usernick}
+	  	where userid=#{userid}
+	  </update>
+	  <select id="memberIdSearch" parameterType="com.group7.inmybucket.vo.RegisterVO" resultType="com.group7.inmybucket.vo.RegisterVO">
+		<![CDATA[
+		    select
+		        *
+		    from
+		        usertable
+		    where
+		        username = #{username}
+		    and
+		        tel = #{tel}
+		]]>    
+	</select>
+	<select id="memberPwdCheck" parameterType="com.group7.inmybucket.vo.RegisterVO" resultType="java.lang.Integer">
+		<![CDATA[
+		    select
+		        count(*)
+		    from
+		        usertable
+		    where
+		        username = #{username}
+		    and
+		        tel = #{tel}
+		    and
+		        userid = #{userid}
+		]]>    
+	</select>
+	<update id="passwordUpdate" parameterType="com.group7.inmybucket.vo.RegisterVO" >
+	    UPDATE 
+	        usertable 
+	    SET 
+	        userpwd = #{userpwd}
+	    where
+	        username = #{username}
+	    and
+	        tel = #{tel}
+	    and
+	        userid = #{userid}
+	</update>
+		<select id="psSearch" resultType="string">
+	  	select userpwd from usertable where username=#{param1} and email=#{param2}
+	  	</select>
+	  <delete id="remove" parameterType="com.group7.inmybucket.vo.RegisterVO">
+	  	delete from usertable where userid=#{userid} and userpwd=#{userpwd}
+	  </delete>
+	   <select id="removeForm" resultType="com.group7.inmybucket.vo.RegisterVO">
+	  	select userid, userpwd from registertest
+	  	where userid=#{param1}
+	  </select>
+	  <insert id="registerprofile">
+	  	INSERT INTO PROFILE(userid) VALUES(#{userid})
+	  </insert>
+	  <select id="kakaoOk" resultType="int">
+	  	select count(email) cnt from usertable where email=#{email}
+	  </select>
+	  <select id="kaka" resultType="com.group7.inmybucket.vo.RegisterVO">
+	  	select userid, userpwd, usernick, permission, email from usertable where email=#{email}
+	  </select>
+  </mapper>

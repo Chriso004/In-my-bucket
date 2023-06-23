@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.group7.inmybucket.dao.MyPageDAO">
+	<select id="getUsernick" resultType="String" parameterType="String">
+		SELECT usernick FROM USERTABLE WHERE userid = #{ param1 }
+	</select>
+	<select id="getProfile" resultType="com.group7.inmybucket.dto.ProfileDTO" parameterType="String">
+		SELECT * FROM PROFILE WHERE userid = #{ param1 }
+	</select>
+	<update id="updateMypageUser" parameterType="com.group7.inmybucket.dto.ProfileDTO">
+		UPDATE PROFILE SET status_message = #{ status_message }, user_image_path = #{ user_image_path } WHERE userid = #{ userid }
+	</update>
+	<update id="updateMypageNickname" parameterType="String">
+		UPDATE USERTABLE SET usernick = #{ param2 } WHERE userid = #{ param1 }
+	</update>
+</mapper>
